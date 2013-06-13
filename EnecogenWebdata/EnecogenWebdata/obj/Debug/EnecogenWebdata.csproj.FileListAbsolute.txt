@@ -1,0 +1,12 @@
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\obj\Debug\EnecogenWebdata.Properties.Resources.resources
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\obj\Debug\EnecogenWebdata.RibbonEnecogenWeb.resources
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\obj\Debug\EnecogenWebdata.csproj.GenerateResource.Cache
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\bin\Debug\EnecogenWebdata.dll
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\bin\Debug\EnecogenWebdata.pdb
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\bin\Debug\EnecogenWebdata.dll.manifest
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\bin\Debug\EnecogenWebdata.vsto
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\obj\Debug\EnecogenWebdata.dll
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\obj\Debug\EnecogenWebdata.pdb
+C:\Users\laoch\Visual Studio 2012\Projects\EnecogenWebdata\EnecogenWebdata\obj\Debug\EnecogenWebdata.csprojResolveAssemblyReference.cache
