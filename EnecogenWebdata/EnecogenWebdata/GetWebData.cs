@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -109,7 +110,24 @@ namespace EnecogenWebdata
                     int lastRow = totalRange.Rows.Count;
                     String lastDate = ws.Cells[lastRow, 1].Text;
                     int lastSeq = Convert.ToInt32( ws.Cells[lastRow, 2].Text );
-                    DateTime dtLast = DateTime.Parse( lastDate );
+                    CultureInfo provider = CultureInfo.InvariantCulture;
+                    DateTime dtLast = new DateTime();
+                    //TODO This works but is not very elegant
+                    try
+                    {
+                        dtLast = DateTime.ParseExact( lastDate, "DD/MM/YYYY", provider );
+                    }catch( FormatException fe )
+                    {
+                        Console.WriteLine("Date not in the correct format");
+                    }
+                    try
+                    {
+                        dtLast = DateTime.ParseExact(lastDate, "MM/DD/YYYY", provider);
+                    }
+                    catch (FormatException fe)
+                    {
+                        Console.WriteLine("Date not in the correct format");
+                    }
                     while ((line = reader.ReadLine()) != null)
                     {
                         //skip the first line with text
@@ -118,7 +136,27 @@ namespace EnecogenWebdata
                             line = line.Replace("\"", ""); //removing all the double qoutes
                             String[] lineContent = line.Split(',');
                             endColNumber = lineContent.Length;
-                            DateTime dtLastFile = DateTime.Parse(lineContent[0]);
+                            DateTime dtLastFile = new DateTime();// = DateTime.Parse(lineContent[0]);
+                            //TODO This works but is not very elegant
+                            try
+                            {
+                                dtLastFile = DateTime.ParseExact(lineContent[0], "DD/MM/YYYY", provider);
+                            }
+                            catch (FormatException fe)
+                            {
+                                Console.WriteLine("Date not in the correct format");
+                            }
+                            try
+                            {
+                                dtLastFile = DateTime.ParseExact(lineContent[0], "MM/DD/YYYY", provider);
+                            }
+                            catch (FormatException fe)
+                            {
+                                Console.WriteLine("Date not in the correct format");
+                            }
+
+
+
                             int lastSeqFile = Convert.ToInt32(lineContent[1]);
 
                             if (dtLastFile > dtLast && lastSeq > lastSeqFile)
@@ -187,7 +225,7 @@ namespace EnecogenWebdata
                     MessageBox.Show("Sheet: " +ws.Name + "Error getting data: " +  ex.ToString(), "Data Error");
                 }
                 GC.Collect();
-
+                ws.UsedRange.EntireColumn.AutoFit();
                 Thread.Sleep(refreshInterval * 60000);
             }
 
